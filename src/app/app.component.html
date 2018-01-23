@@ -8,7 +8,10 @@
         </div>
 
         <div class="col-md-8">
-            <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+            <agm-map [latitude]="lat" 
+                    [longitude]="lng"
+                    [zoom]="zoom"
+                    (mapClick)="clickMapa($event)">
                 <agm-marker [latitude]="lat" [longitude]="lng">
                     <agm-info-window>
                         <strong>Titulo</strong>

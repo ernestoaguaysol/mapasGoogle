@@ -9,4 +9,9 @@ export class AppComponent {
   lat: number = -34.605956;
   lng: number = -58.734702;
   zoom: number = 16;
+
+
+  clickMapa(evento) {
+    console.log(evento);
+  }
 }
