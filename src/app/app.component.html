@@ -12,11 +12,15 @@
                     [longitude]="lng"
                     [zoom]="zoom"
                     (mapClick)="clickMapa($event)">
-                <agm-marker [latitude]="lat" [longitude]="lng">
+                <agm-marker *ngFor="let marcador of _mapasService.marcadores"
+                    [latitude]="marcador.lat" 
+                    [longitude]="marcador.lng"
+                    [title]="marcador.titulo"
+                    [markerDraggable]="marcador.draggable">
                     <agm-info-window>
-                        <strong>Titulo</strong>
-                        <p>
-                            Esta es mi casa
+                        <strong>{{marcador.titulo}}</strong>
+                        <p *ngIf="marcador.desc">
+                            {{marcador.desc}}
                         </p>
 
                     </agm-info-window>
